@@ -17,7 +17,7 @@ Use `Node.js` and `Express` to build an API that performs _CRUD_ operations on `
 - clone **your copy** of this repository.
 - **CD into the folder** where you cloned the repository.
 - Type `npm install` to download all dependencies.
-- To start the server, type `npm run server` from the root folder (where the _package.json_ file is). The server is configured to restart automatically as you make changes.
+- To start the index, type `npm run index` from the root folder (where the _package.json_ file is). The index is configured to restart automatically as you make changes.
 
 ### Database Persistence Helpers
 
@@ -201,9 +201,9 @@ When the client makes a `PUT` request to `/api/posts/:id`:
 To work on the stretch problems you'll need to enable the `cors` middleware. Follow these steps:
 
 - add the `cors` npm module: `npm i cors`.
-- add `server.use(cors())` after `server.use(express.json())`.
+- add `index.use(cors())` after `index.use(express.json())`.
 
-Create a new React application and connect it to your server:
+Create a new React application and connect it to your index:
 
 - Use `create-react-app` to create an application inside the root folder, name it `client`.
 - From the React application connect to the `/api/posts` endpoint in the API and show the list of posts.
