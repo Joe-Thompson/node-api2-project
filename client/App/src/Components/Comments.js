@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 function Comments({ match, history }) {
     const id = match.params.id;
@@ -56,31 +57,33 @@ function Comments({ match, history }) {
 
     if (!post || !comments) {
         return (
-            <h1>Loading...</h1>
+            <h1 className="title">Loading...</h1>
         )
     }
 
     return (
-        <div>
-           <h1>{post[0].title}</h1>
-            <h1>{post[0].contents}</h1>
-            {comments.map((item) => {
+        <div className="commentComponent">
+            <div className="post">
+           <h1 className="postTitle">{post[0].title}</h1>
+            <h1 className="postContent">{post[0].contents}</h1>
+            </div>
+                {comments.map((item) => {
                 return (
-                    <div key={item.id}>
+                    <div className="card comment" key={item.id}>
                         <h1>{item.text}</h1>
                     </div>
                 )
             })}
-
-            <form onSubmit={submitHandler}>
-                <input type="text"
+            <form className="createForm" onSubmit={submitHandler}>
+                <input className="input updateComment" type="text"
                        name="text"
                        placeholder="Enter new comment"
                        value={newComment.text}
                        onChange={changeHandler}
                        />
-                       <button type="submit">Submit</button>
+                       <button className="submit" type="submit">Submit</button>
             </form>
+            <Link className="btn nav" to={"/"}>Back</Link>
         </div>
     )
 

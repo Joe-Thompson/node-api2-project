@@ -45,28 +45,32 @@ function Dashboard() {
 
     if (!posts) {
         return (
-            <h1>Loading....</h1>
+            <h1 className="title">Loading....</h1>
         )}
         return (
         <div>
-            <h1>Hey you guys</h1>
+            <h1 className="title">Middle Earth - Who's line is it?</h1>
 
-            <form onSubmit={submitHandler}>
-                <input type="text" name="title" value={newPost.title} placeholder="Please enter Title" onChange={changeHandler} />
-                <input type="text" name="contents" value={newPost.contents} placeholder="Please enter Content" onChange={changeHandler} />
-                <button type="submit">Create Post</button>
+            <h1 className="title label">Create new Post</h1>
+            <form className="createForm" onSubmit={submitHandler}>
+                <input className="input" type="text" name="title" value={newPost.title} placeholder="Please enter Title" onChange={changeHandler} />
+                <input className="input" type="text" name="contents" value={newPost.contents} placeholder="Please enter Content" onChange={changeHandler} />
+                <button className="submit" type="submit">Submit</button>
             </form>
 
             {posts.map((item) => {
                 return (
-                    <div key={item.id}>
+                    <div className="container">
+                    <div className="card" key={item.id}>
                         <h1>{item.title}</h1>
                         <h2>{item.contents}</h2>
-                        <Link to={`/updatePost/${item.id}`}>Update</Link>
-                        <Link to={`/comments/${item.id}`}>View Comments</Link>
+                        <Link className="btn" to={`/updatePost/${item.id}`}>Update</Link>
+                        <Link className="btn" to={`/comments/${item.id}`}>View Comments</Link>
+                    </div>
                     </div>
                 )
             })}
+            <Link className="btn nav" onClick={() => { window.location.reload()}} to={"/"}>Back to Top</Link>
         </div>
     )
 }
