@@ -65,7 +65,7 @@ function Comments({ match, history }) {
         <div className="commentComponent">
             <div className="post">
            <h1 className="postTitle">{post[0].title}</h1>
-            <h1 className="postContent">{post[0].contents}</h1>
+            <h1 className="postTitle">{post[0].contents}</h1>
             </div>
                 {comments.map((item) => {
                 return (

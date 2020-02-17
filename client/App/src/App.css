@@ -30,7 +30,7 @@ html {
     font-size: 2rem;
     width: 45rem;
     margin: 0 auto;
-    border-radius: 10rem;
+    border-radius: 2rem;
     background-color: #F1F09E;
     color: black;
     padding: 1.5rem;
@@ -136,7 +136,7 @@ html {
     font-family: 'Happy Monkey', cursive;
     color: #F1F09E;
     background-color: rgba(0, 0, 0, .5);
-    width: 95%;
+    width: 100%;
     padding: 2rem 0;
     display: flex;
     flex-wrap: wrap;
@@ -145,7 +145,8 @@ html {
 }
 
 .postTitle {
-    margin: 0 10rem;
+    display: flex;
+    justify-content: center;
 }
 
 .comment {
