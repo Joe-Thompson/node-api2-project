@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const postRouter = require("./postsRouter");
 
+//adding comments for heroku
 const server = express();
 server.use(express.json());
 server.use(cors());
