@@ -8,6 +8,8 @@ server.use(express.json());
 server.use(cors());
 server.use("/api/posts", postRouter);
 
-server.listen(4000, () => {
+const port = process.env.PORT || 4000;
+
+server.listen(port, () => {
   console.log("\n*** Server Running on http://localhost:4000 ***\n");
 });
